@@ -50,12 +50,12 @@ void Client::executeBatteryStateChange()
 	std::cout << "** Le client " << getClientName() << " termine l'execution de l'evenement Battery state change." << std::endl;
 }
 
-const int Client::getClientName()
+int Client::getClientName() const
 {
 	return clientName_;
 }
-
-const bool Client::isClientAvailable()
+ 
+bool Client::isClientAvailable() const
 {
 	return available_;
 }

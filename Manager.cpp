@@ -13,11 +13,11 @@ Manager::Manager()
 }
 void Manager::run()
 {
-	std::vector<std::thread*> threads(1);
+	std::vector<std::thread*> threads;
 	while(getStillLaunchingEvents())
 	{ 
 		Event event = getEventFromConsole();
-		threads.back() = new std::thread(&Manager::executeEvent, this, event);
+		threads.push_back(new std::thread(&Manager::executeEvent, this, event));
 	}
 	for (auto& t : threads)
 	{
@@ -33,7 +33,7 @@ std::shared_ptr<Client> Manager::newClient(Event event)
 	return clients_[event].back();
 }
 
-const bool Manager::getStillLaunchingEvents()
+bool Manager::getStillLaunchingEvents() const
 {
 	bool entreeValide = false;
 	while (!entreeValide)
@@ -58,7 +58,7 @@ const bool Manager::getStillLaunchingEvents()
 	}
 }
 
-const Event Manager::getEventFromConsole()
+Event Manager::getEventFromConsole() const
 {
 	bool validInformation = false;
 

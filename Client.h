@@ -9,14 +9,14 @@ class Client
 public:
 	Client(int clientName);
 	void executeEvent(Event event);
-	const bool isClientAvailable();
+	bool isClientAvailable() const;
 
 private:
 	void executeGPSLocation();
 	void executeMotionDetection();
 	void executeCellularConnectionChange();
 	void executeBatteryStateChange();
-	const int getClientName();
+	int getClientName() const;
 	void setClientAvailable(bool isAvailable);
 
 	int clientName_;
