@@ -33,7 +33,7 @@ std::shared_ptr<Client> Manager::newClient(Event event)
 	return clients_[event].back();
 }
 
-bool Manager::getStillLaunchingEvents()
+const bool Manager::getStillLaunchingEvents()
 {
 	bool entreeValide = false;
 	while (!entreeValide)
@@ -58,7 +58,7 @@ bool Manager::getStillLaunchingEvents()
 	}
 }
 
-Event Manager::getEventFromConsole()
+const Event Manager::getEventFromConsole()
 {
 	bool validInformation = false;
 
@@ -85,7 +85,7 @@ Event Manager::getEventFromConsole()
 			return batteryStateChange;
 		default:
 			validInformation = false;
-			std::cout << "Seules les valeurs de 1 a 4 sont valides."<<std::endl;
+			std::cout << "Seules les valeurs de 1 a 4 sont valides." << std::endl;
 			break;
 		}
 	}
@@ -109,5 +109,4 @@ void Manager::executeEvent(Event event)
 		std::shared_ptr<Client> client = newClient(event);
 		client->executeEvent(event);
 	}
-	
 }

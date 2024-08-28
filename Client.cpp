@@ -27,35 +27,35 @@ void Client::executeEvent(Event event)
 }
 void Client::executeGPSLocation()
 {
-	std::cout << "** Le client " << clientName_ << " debute l'execution de l'evenement GPS Location." << std::endl;
+	std::cout << "** Le client " << getClientName() << " debute l'execution de l'evenement GPS Location." << std::endl;
 	std::this_thread::sleep_for(std::chrono::seconds(1));
-	std::cout << "** Le client " << clientName_ << " termine l'execution de l'evenement GPS Location." << std::endl;
+	std::cout << "** Le client " << getClientName() << " termine l'execution de l'evenement GPS Location." << std::endl;
 }
 void Client::executeMotionDetection()
 {
-	std::cout << "** Le client " << clientName_ << " debute l'execution de l'evenement Motion Detection." << std::endl;
+	std::cout << "** Le client " << getClientName() << " debute l'execution de l'evenement Motion Detection." << std::endl;
 	std::this_thread::sleep_for(std::chrono::seconds(3));
-	std::cout << "** Le client " << clientName_ << " termine l'execution de l'evenement Motion Detection." << std::endl;
+	std::cout << "** Le client " << getClientName() << " termine l'execution de l'evenement Motion Detection." << std::endl;
 }
 void Client::executeCellularConnectionChange()
 {
-	std::cout << "** Le client " << clientName_ << " debute l'execution de l'evenement Cellular connection change." << std::endl;
+	std::cout << "** Le client " << getClientName() << " debute l'execution de l'evenement Cellular connection change." << std::endl;
 	std::this_thread::sleep_for(std::chrono::seconds(3));
-	std::cout << "** Le client " << clientName_ << " termine l'execution de l'evenement Cellular connection change." << std::endl;
+	std::cout << "** Le client " << getClientName() << " termine l'execution de l'evenement Cellular connection change." << std::endl;
 }
 void Client::executeBatteryStateChange()
 {
-	std::cout << "** Le client " << clientName_ << " debute l'execution de l'evenement Battery state change." << std::endl;
+	std::cout << "** Le client " << getClientName() << " debute l'execution de l'evenement Battery state change." << std::endl;
 	std::this_thread::sleep_for(std::chrono::seconds(25));
-	std::cout << "** Le client " << clientName_ << " termine l'execution de l'evenement Battery state change." << std::endl;
+	std::cout << "** Le client " << getClientName() << " termine l'execution de l'evenement Battery state change." << std::endl;
 }
 
-int Client::getClientName()
+const int Client::getClientName()
 {
 	return clientName_;
 }
 
-bool Client::isClientAvailable()
+const bool Client::isClientAvailable()
 {
 	return available_;
 }

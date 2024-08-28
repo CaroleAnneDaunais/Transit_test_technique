@@ -15,8 +15,8 @@ public:
 
 private:
 	std::shared_ptr<Client> newClient(Event event);
-	bool getStillLaunchingEvents();
-	Event getEventFromConsole();
+	const bool getStillLaunchingEvents();
+	const Event getEventFromConsole();
 	void executeEvent(Event event);
 	std::unordered_map<Event, std::vector<std::shared_ptr<Client>>> clients_;
 };
