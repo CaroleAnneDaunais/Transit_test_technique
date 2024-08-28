@@ -1,6 +1,4 @@
-#include "Client.h"
 #include "Manager.h"
-#include <thread> 
 
 int main()
 {

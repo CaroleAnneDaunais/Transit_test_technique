@@ -1,6 +1,4 @@
 #include "Client.h"
-#include <thread>
-#include <chrono>
 
 
 Client::Client(int clientName)

@@ -72,7 +72,7 @@ Event Manager::getEventFromConsole()
 		<< "3 - Cellular Connection Change" << std::endl
 		<< "4 - Battery State Charge" << std::endl;
 		int eventInteger;
-		std::cin >> eventInteger;
+		std::cin >> eventInteger; 
 		switch (eventInteger)
 		{
 		case 1:
@@ -86,6 +86,7 @@ Event Manager::getEventFromConsole()
 		default:
 			validInformation = false;
 			std::cout << "Seules les valeurs de 1 a 4 sont valides."<<std::endl;
+			break;
 		}
 	}
 	std::cout<<std::endl;

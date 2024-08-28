@@ -1,12 +1,11 @@
 #pragma once
 #include <unordered_map>
 #include <vector>
-#include "Client.h"
-#include "events.h"
 #include <memory>
 #include <iostream>
 #include <thread>
 #include <utility>
+#include "Client.h"
 
 class Manager
 {
