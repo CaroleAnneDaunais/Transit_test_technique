@@ -5,15 +5,20 @@
 #include "events.h"
 #include <memory>
 #include <iostream>
+#include <thread>
+#include <utility>
+
 class Manager
 {
 public:
 	Manager();
 	void run();
-	void addClients(Event event);
+
 private:
+	std::shared_ptr<Client> newClient(Event event);
 	bool getStillLaunchingEvents();
 	Event getEventFromConsole();
+	void executeEvent(Event event);
 	std::unordered_map<Event, std::vector<std::shared_ptr<Client>>> clients_;
 };
 

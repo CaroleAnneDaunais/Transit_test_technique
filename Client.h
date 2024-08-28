@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "events.h"
+#include <iostream>
 class Client
 {
 public:
@@ -12,6 +13,7 @@ public:
 	void executeBatteryStateChange();
 	int getClientName();
 	bool isClientAvailable();
+	void setClientAvailable(bool isAvailable);
 
 private:
 	int clientName_;
